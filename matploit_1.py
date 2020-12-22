@@ -1,5 +1,4 @@
 import matplotlib.pyplot as plt
-
 data = {'Estate': 30, 'Primavera': 15, 'Inverno': 7, 'Autunno': 5}
 names = list(data.keys())
 values = list(data.values())
