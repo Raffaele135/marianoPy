@@ -6,22 +6,7 @@ import matplotlib.pyplot as plt
 # apriamo il file in lettura
 f = open("dati.txt", 'r')
 
-'''
-si potrebbe usare il metodo readlines 
-per ottenere una lista di righe del file
 
-stampiamo la prima riga
-print(f.readline()) 
-
-possiamo fare un ciclo e prendere riga per riga 
-Python, tuttavia, mette a disposizione la possibilità
-di inserire riga per riga all'interno di una varabile, 
-utilizzando un ciclo di for
-
-valori = str(riga)
-
-permette di salvare in "valori" il contenuto della riga estratta
-'''
 coordX = []
 coordY = []
 
