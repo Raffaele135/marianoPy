@@ -61,7 +61,7 @@ window = Tk()
 window.title('Seleziona file e genera grafico')
 
 # decidi la grandezza della finestra
-window.geometry("700x700") 
+window.geometry("700x500") 
 
 # inserisci il colore della finestra
 window.config(background = "dark blue") 
