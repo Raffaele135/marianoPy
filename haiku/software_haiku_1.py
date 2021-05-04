@@ -15,7 +15,5 @@ y=estrazione(lista_b)
 z=estrazione(lista_c)
 
 print (x)
-print (x)
-print (x)
 print (y)
 print (z)
