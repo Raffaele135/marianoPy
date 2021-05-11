@@ -1,6 +1,8 @@
+#Calcola la media dei voti 
+from numpy import mean
 voti = {
-    "Mario": {"matematica": "6", "italiano": "6", "scienze": "7", "inglese": "4"}    
-    "Giovanni": {"matematica": "4", "italiano": "6", "scienze": "5", "inglese": "7"}
+    "Mario": {"matematica": "6", "italiano": "6", "scienze": "7", "inglese": "4"},    
+    "Giovanni": {"matematica": "4", "italiano": "6", "scienze": "5", "inglese": "7"},
     "Paola": {"matematica": "9", "italiano": "6", "scienze": "8", "inglese": "8"}
 }
 
