@@ -1,10 +1,7 @@
 #software realizzato da Mariano e di Gennaro per il gruppo Mariano, di Gennaro, Greco, Iannuzzi0
 from csv import reader
 import random
-from tkinter import *
-from tkinter import filedialog 
 import tkinter as tk
-from PIL import ImageTk, Image 
 
 def software():
     # Estrattore casuale
@@ -34,16 +31,20 @@ def software():
     x=estrazione(nuova_lista_1) 
     y=estrazione(nuova_lista_2)
     z=estrazione(nuova_lista_3)
-    print (x)
-    print (y)
-    print (z)
+
 
 window = tk.Tk()
-window.geometry("700x700")  
-window.config(background = "dark blue") 
+window.geometry("600x400")
+window.title("Generatore di haiku")
+window.resizable(False, False)
+window.configure(background="light blue")
 
-button_genera_grafico = tk.Button(window, text = "Genera grafico", width = 100, height = 2, command = software)
-button_genera_grafico.pack()
+
+first_button = tk.Button(text="premi il bottone", command = software)
+first_button.grid(row=1, column=5)
+
+
+
 
 
 window.mainloop()
