@@ -31,20 +31,21 @@ def software():
     x=estrazione(nuova_lista_1) 
     y=estrazione(nuova_lista_2)
     z=estrazione(nuova_lista_3)
+    lista = [x , y , z]
+    text_output = tk.Label(window, text=lista)
+    text_output.grid(row=2, column=0)
+  
+
 
 
 window = tk.Tk()
-window.geometry("600x400")
+window.geometry("700x500")
 window.title("Generatore di haiku")
 window.resizable(False, False)
-window.configure(background="light blue")
-
-
-first_button = tk.Button(text="premi il bottone", command = software)
-first_button.grid(row=1, column=5)
-
-
-
-
-
+window.configure(background="light grey")
+text = "Questo programma serve a generare casualmente Haiku, partendo da un insieme di versi. I versi sono divisi in tre categorie." 
+text_output_2= tk.Label(window, text=text)
+text_output_2.grid(row=0, column=0)
+first_button = tk.Button(text="premi il bottone", width=100, command = software)
+first_button.grid(row=1, column=0)
 window.mainloop()
