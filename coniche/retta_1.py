@@ -1,25 +1,48 @@
+print("Lavorare con equazione scritta nella forma: ax + by + c = 0")
 class retta:
-   
-    def __init__(self, eqImplicita, eqEsplicita, Coordinate):
-        self.eqImplicita = (eqImplicita)
-        self.eqEsplicita = (eqEsplicita)
-        self.Coordinate = (Coordinate)
-
     
-    def equazione_esplicita(self):
-        return f'Consegna:\n  Equazione esplicita:\n{self.eqEsplicita}\n Equazione implicita:\n{self.eqImplicita}\n Coordinate:\n{self.Coordinate}'
-
-a = float(input("Il valore x è "))
-b = float(input("Il valore y è "))
-c = float(input("Il termine noto è "))
-y = (-a / b) 
-z = (-c / b)
-eq_1 = "y =" , y ,'x' , '+' , z
-eq_2 = a,'x', '+', b,'y', '+' , c , = 0
-coordinate_1 = (0,z)
-coordinate_2 = (y,(y + z))
-coordinate_3 = coordinate_1 , coordinate_2
-equazione_uno = retta(eq_1, eq_2, coordinate_3) 
-print(equazione_uno.equazione_esplicita())
-
     
+
+    def __init__(self, a, b, c, x):
+        self.a = float(a)
+        self.b = float(b)
+        self.c = float(c)
+        self.x = float(x)
+        
+
+    def Implicita(self):
+        if self.b == 0:
+            return f"\nForma implicita dell'equazione:\n {self.a}x + {self.c} = 0"       
+        elif self.a == 0:
+            return f"\nForma implicita dell'equazione:\n {self.b}y + {self.c} = 0"    
+        elif self.c == 0:
+            return f"\nForma implicita dell'equazione:\n {self.a}x + {self.b}y = 0"    
+        else:   
+            return f"\nForma implicita dell'equazione:\n {self.a}x + {self.b}y + {self.c} = 0 "
+
+    def Esplicita(self):
+        if self.b == 0:
+            return f"\nForma esplicita dell'equazione: \n L'equazione è impossibile"
+        elif self.a == 0:
+            return f"\nForma esplicita dell'equazione: \n y = {-self.c / self.b}"
+        elif self.c == 0:
+            return f"\nForma esplicita dell'equazione: \n y = {-self.a / self.b}"
+        else:
+            return f"\nForma esplicita dell'equazione: \n y = {-self.a / self.b}x + {-self.c / self.b}"
+    
+    def punti(self):
+        for i in range (600):
+            y = (-self.a * self.x) / self.b + (-self.c / self.b)
+            tupla = (self.x, y)
+            self.x = self.x + 1
+            print(tupla)
+
+
+
+
+
+valori = retta(input('a = '), input('b = '), input('c = '), -300)
+print(valori.punti())
+
+
+
