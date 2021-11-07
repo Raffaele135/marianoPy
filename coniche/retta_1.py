@@ -97,14 +97,20 @@ class retta:
         else:
             return f"\nLe rette sono incidenti e la coordinata del punto d'incidenza è: ({((-self.__c / self.__b)+(self.__c1 / self.__b1))/((-self.__b / self.__a)+(self.__b1 / self.__a1))}, {((-self.__b / self.__c)+(self.__b1 / self.__c1))/((-self.__b / self.__a)+(self.__b1 / self.__a1))})"
 
-valori = retta(2, 3, 4)
+    def fascio_parallelo(self):
+        if self.__b == 0:
+            return f"\nL'equazione del fascio parallelo alla retta data è: \nx = k"
+        else:
+            return f"\nL'equazione del fascio parallelo alla retta data è: \ny = {-self.__a / self.__b}x + q"
+
+valori = retta(input('a = ' ), input('b = ' ), input('c = ' ))
 print(valori.Implicita())
 print(valori.Esplicita())
 print(valori.m())
-print(valori.trovaY(2))
-print(valori.punti(0, 10, 5))
-print(valori.instersezione(2, 3, 5))
-
+print(valori.trovaY(input('x = ')))
+print(valori.punti(input('inizio intervallo = ') , input('fine intervallo = ')))
+print(valori.instersezione(input('a1 = ' ), input('b1 = ' ), input('c1 = ' )))
+print(valori.fascio_parallelo())
 print(valori.a_b_c_da_punti(input('x1 = ' ), input('x2 = ' ), input('y1 = ' ), input('y2 = ' )))
 print(valori.a_b_c_da_m(input('x1 = ' ), input('y1 = ' ), input('m = ' )))
  
