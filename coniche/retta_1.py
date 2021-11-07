@@ -106,6 +106,6 @@ print(valori.punti(0, 10, 5))
 print(valori.instersezione(2, 3, 5))
 
 print(valori.a_b_c_da_punti(input('x1 = ' ), input('x2 = ' ), input('y1 = ' ), input('y2 = ' )))
-
-
+print(valori.a_b_c_da_m(input('x1 = ' ), input('y1 = ' ), input('m = ' )))
+ 
 
