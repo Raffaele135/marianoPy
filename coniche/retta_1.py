@@ -29,7 +29,7 @@ class retta:
         mcm = (x_d * y_d) / MCD
         a = mcm / x_d
         b = mcm / y_d
-        c = (mcm / x_d * -x2) + (mcm / y_d * y2)
+        c = (mcm / x_d * -self.__x2) + (mcm / y_d * self.__y2)
         print("a = ", a,',', "b = ", b,',', "c = ",c)
 
     def a_b_c_da_m(self, x3, y3, m1):
