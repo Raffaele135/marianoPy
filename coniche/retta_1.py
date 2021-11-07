@@ -38,7 +38,7 @@ class retta:
         self.__m1 = int(m1)
         a = self.__m1
         b = -1
-        c = (self.__m1 * -x3)+y3
+        c = (self.__m1 * -self.__x3)+self.__y3
         print("a = ", a,',', "b = ", b,',', "c = ",c)
 
 
