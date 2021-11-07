@@ -1,3 +1,4 @@
+import math
 print("Lavorare con equazione scritta nella forma: ax + by + c = 0")
 class retta:
     
@@ -7,6 +8,38 @@ class retta:
         self.__b = float(b)
         self.__c = float(c)
         self.__punti = []
+    
+    def getA(self):
+        return f"\n a = {self.__a}"
+    
+    def getB(self):
+        return f"\n b = {self.__b}"
+
+    def getC(self):
+        return f"\n c = {self.__c}"
+
+    def a_b_c_da_punti(self, x1, x2, y1, y2):
+        self.__x1 = int(x1)
+        self.__x2 = int(x2)
+        self.__y1 = int(y1)
+        self.__y2 = int(y2)
+        x_d = (self.__x2 - self.__x1)
+        y_d = (self.__y2 - self.__y1)
+        MCD = math.gcd(x_d, y_d)
+        mcm = (x_d * y_d) / MCD
+        a = mcm / x_d
+        b = mcm / y_d
+        c = (mcm / x_d * -x2) + (mcm / y_d * y2)
+        print("a = ", a,',', "b = ", b,',', "c = ",c)
+
+    def a_b_c_da_m(self, x3, y3, m1):
+        self.__x3 = int(x3)
+        self.__y3 = int(y3)
+        self.__m1 = int(m1)
+        a = self.__m1
+        b = -1
+        c = (self.__m1 * -x3)+y3
+        print("a = ", a,',', "b = ", b,',', "c = ",c)
 
 
     def Implicita(self):
@@ -72,6 +105,7 @@ print(valori.trovaY(2))
 print(valori.punti(0, 10, 5))
 print(valori.instersezione(2, 3, 5))
 
+print(valori.a_b_c_da_punti(input('x1 = ' ), input('x2 = ' ), input('y1 = ' ), input('y2 = ' )))
 
 
 
