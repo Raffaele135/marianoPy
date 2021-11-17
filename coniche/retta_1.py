@@ -14,6 +14,7 @@ class retta:
             self.__x2 = int(p2)
             self.__y1 = int(p3)
             self.__y2 = int(p4)
+            self.__punti = []
             x_d = (self.__x2 - self.__x1)
             y_d = (self.__y2 - self.__y1)
             MCD = math.gcd(x_d, y_d)
@@ -27,6 +28,7 @@ class retta:
             self.__x3 = int(p1)
             self.__y3 = int(p2)
             self.__m1 = int(p3)
+            self.__punti = []
             self.__a = self.__m1
             self.__b = -1
             self.__c = (self.__m1 * -self.__x3)+self.__y3
