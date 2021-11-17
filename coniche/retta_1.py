@@ -2,13 +2,36 @@ import math
 print("Lavorare con equazione scritta nella forma: ax + by + c = 0")
 class retta:
     
+    def __init__(self, tipo = "param", p1 = None, p2 = None, p3 = None, p4 = None):
+        if(tipo == "param"):
+            self.__a = int(p1)
+            self.__b = int(p2)
+            self.__c = int(p3)
+            self.__punti = []    
 
-    def __init__(self, a, b, c):
-        self.__a = float(a)
-        self.__b = float(b)
-        self.__c = float(c)
-        self.__punti = []
-    
+        elif(tipo == "punti"):
+            self.__x1 = int(p1)
+            self.__x2 = int(p2)
+            self.__y1 = int(p3)
+            self.__y2 = int(p4)
+            x_d = (self.__x2 - self.__x1)
+            y_d = (self.__y2 - self.__y1)
+            MCD = math.gcd(x_d, y_d)
+            mcm = (x_d * y_d) / MCD
+            self.__a = mcm / x_d
+            self.__b = mcm / y_d
+            self.__c = (mcm / x_d * -self.__x2) + (mcm / y_d * self.__y2)
+            print("a = ", self.__a,',', "b = ", self.__b,',', "c = ",self.__c)
+
+        elif(tipo == "coeff"):
+            self.__x3 = int(p1)
+            self.__y3 = int(p2)
+            self.__m1 = int(p3)
+            self.__a = self.__m1
+            self.__b = -1
+            self.__c = (self.__m1 * -self.__x3)+self.__y3
+            print("a = ", self.__a,',', "b = ", self.__b,',', "c = ",self.__c)
+
     def getA(self):
         return f"\n a = {self.__a}"
     
@@ -17,30 +40,6 @@ class retta:
 
     def getC(self):
         return f"\n c = {self.__c}"
-
-    def a_b_c_da_punti(self, x1, x2, y1, y2):
-        self.__x1 = int(x1)
-        self.__x2 = int(x2)
-        self.__y1 = int(y1)
-        self.__y2 = int(y2)
-        x_d = (self.__x2 - self.__x1)
-        y_d = (self.__y2 - self.__y1)
-        MCD = math.gcd(x_d, y_d)
-        mcm = (x_d * y_d) / MCD
-        a = mcm / x_d
-        b = mcm / y_d
-        c = (mcm / x_d * -x2) + (mcm / y_d * y2)
-        print("a = ", a,',', "b = ", b,',', "c = ",c)
-
-    def a_b_c_da_m(self, x3, y3, m1):
-        self.__x3 = int(x3)
-        self.__y3 = int(y3)
-        self.__m1 = int(m1)
-        a = self.__m1
-        b = -1
-        c = (self.__m1 * -x3)+y3
-        print("a = ", a,',', "b = ", b,',', "c = ",c)
-
 
     def Implicita(self):
         if self.__b == 0:
@@ -69,7 +68,8 @@ class retta:
             return f"\nCoefficiente angolare: \n m = {-self.__b / self.__a}"
     
     def trovaY(self, x):
-        return f"\n Y: \n y = {-self.__a * x / self.__b + (-self.__c / self.__b)}"
+        self.__x = int(x)
+        return f"\n Y: \n y = {-self.__a * self.__x / self.__b + (-self.__c / self.__b)}"
 
 
     def punti(self, N, M, x):
@@ -84,9 +84,9 @@ class retta:
 
 
     def instersezione(self, a1 , b1 , c1):
-        self.__a1 = float(a1)
-        self.__b1 = float(b1)
-        self.__c1 = float(c1)
+        self.__a1 = int(a1)
+        self.__b1 = int(b1)
+        self.__c1 = int(c1)
         if (-self.__b / self.__a) == (-self.__b1 / self.__a1):
             if self.__c == self.__c1:
                 return f"\nLe rette sono coincidenti \n {self.__punti}"
@@ -103,7 +103,7 @@ class retta:
         else:
             return f"\nL'equazione del fascio parallelo alla retta data è: \ny = {-self.__a / self.__b}x + q"
 
-valori = retta(input('a = ' ), input('b = ' ), input('c = ' ))
+valori = retta(input('tipo = ' ), input('valore 1 = ' ), input('valore 2 = ' ), input('valore 3 = ' ), input('valore 4 = '))  
 print(valori.Implicita())
 print(valori.Esplicita())
 print(valori.m())
@@ -111,7 +111,5 @@ print(valori.trovaY(input('x = ')))
 print(valori.punti(input('inizio intervallo = ') , input('fine intervallo = ')))
 print(valori.instersezione(input('a1 = ' ), input('b1 = ' ), input('c1 = ' )))
 print(valori.fascio_parallelo())
-print(valori.a_b_c_da_punti(input('x1 = ' ), input('x2 = ' ), input('y1 = ' ), input('y2 = ' )))
-print(valori.a_b_c_da_m(input('x1 = ' ), input('y1 = ' ), input('m = ' )))
  
 
