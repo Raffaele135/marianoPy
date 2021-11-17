@@ -65,20 +65,20 @@ class retta:
         if self.__b == 0:
             return f"\nCoefficiente angolare: \n Il coefficiente angolare non è definito; la retta è parallela all'asse y"
         else:
-            return f"\nCoefficiente angolare: \n m = {-self.__b / self.__a}"
+            return f"\nCoefficiente angolare: \n m = {-self.__a / self.__b}"
     
     def trovaY(self, x):
         self.__x = int(x)
         return f"\n Y: \n y = {-self.__a * self.__x / self.__b + (-self.__c / self.__b)}"
 
 
-    def punti(self, N, M, x):
-        self.N = N
-        self.M = M
+    def punti(self, K, H):
+        self.__K = int(K)
+        self.__H = int(H)
     
-        for self.N in range (self.M):
-            tupla = (x, (-self.__a * x) / self.__b + (-self.__c / self.__b))
-            x = x + 1
+        for self.__K in range (self.__H):
+            tupla = (self.__x, (-self.__a * self.__x) / self.__b + (-self.__c / self.__b))
+            self.__x = self.__x + 1
             self.__punti.append(tupla)
         return f"\n Le coordinate dei punti appartenenti alla retta sono: \n {self.__punti}"         
 
