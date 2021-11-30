@@ -35,13 +35,13 @@ class retta:
             print("a = ", self.__a,',', "b = ", self.__b,',', "c = ",self.__c)
 
     def getA(self):
-        return {self.__a}
+        return self.__a
     
     def getB(self):
-        return {self.__b}
+        return self.__b
 
     def getC(self):
-        return {self.__c}
+        return self.__c
 
     def Implicita(self):
         if self.__b == 0:
