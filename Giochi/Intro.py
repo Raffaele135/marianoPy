@@ -32,10 +32,9 @@ def set_alien_hit():
     #sounds.eep.play()
     clock.schedule_unique(set_alien_normal, 0.5)
  
- 
 def set_alien_normal():
     alien.image = "alien"
-    
-animate(alien, pos=(100,100))
+
+animate(alien,tween='linear',on_finished=None,duration=3, pos=(600,300))
 
 pgzrun.go()
