@@ -34,3 +34,4 @@ while True:
     #Grazie al terminale vado nella cartella Scripts di Python e installo\disinstallo la libreria
     input("\n\n\n-Premi invio per riutilizzare il programma o premi ctrl + c per terminarne  l'esecuzione  ")
     #Se viene premuto invio il ciclo si ripete, se l'utente preme ctrl+c il programma verrà chiuso dall'errore KeyboardInterrupt
+
